@@ -2,19 +2,19 @@
   {
     "id": 1,
     "name": "Video Gaming",
-    "image": "https://img.freepik.com/free-photo/cute-cat-with-computer_23-2150932174.jpg?ga=GA1.1.1437492054.1736073450&semt=ais_hybrid&w=740",
+    "image": "https://images.unsplash.com/photo-1598550890784-cb4bfe75f7c9?q=80&w=1200",
     "description": "Join fellow gamers for weekly online sessions, tournaments, and strategy sharing for your favorite video games."
   },
   {
     "id": 2,
     "name": "Fishing",
-    "image": "https://img.freepik.com/free-photo/neolithic-period-lifestyle_23-2151786504.jpg?ga=GA1.1.1437492054.1736073450&semt=ais_hybrid&w=740",
+    "image": "https://images.unsplash.com/photo-1501876725168-00c445821c9e?q=80&w=1200",
     "description": "Connect with anglers in your area, plan trips to lakes and rivers, and learn new fishing techniques and gear tips."
   },
   {
     "id": 3,
     "name": "Running",
-    "image": "https://img.freepik.com/free-photo/full-shot-woman-living-healthy-lifestyle_23-2151201904.jpg?ga=GA1.1.1437492054.1736073450&semt=ais_hybrid&w=740",
+    "image": "https://images.unsplash.com/photo-1571019613577-2b3735f5f4f6?q=80&w=1200",
     "description": "Whether you're a beginner or marathon pro, meet up for runs, share progress, and stay motivated together."
   },
   {
@@ -32,7 +32,43 @@
   {
     "id": 6,
     "name": "Writing",
-    "image": "https://img.freepik.com/free-photo/creativity-creative-ideas-imagination-inspiration-design-concept_53876-123736.jpg?ga=GA1.1.1437492054.1736073450&semt=ais_hybrid&w=740",
+    "image": "https://images.unsplash.com/photo-1502920917128-1aa500764ce7?q=80&w=1200",
     "description": "From journaling to fiction writing, collaborate on stories, receive feedback, and build your writing craft."
+  },
+  {
+    "id": 7,
+    "name": "Photography",
+    "image": "https://images.unsplash.com/photo-1549921296-3cce903b5b5b?q=80&w=1200",
+    "description": "Capture the world around you, share your shots, and join local photo walks and exhibitions."
+  },
+  {
+    "id": 8,
+    "name": "Painting",
+    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1200",
+    "description": "Unleash your inner artist with acrylics, oils, or watercolors in group painting sessions or classes."
+  },
+  {
+    "id": 9,
+    "name": "Yoga",
+    "image": "https://images.unsplash.com/photo-1594737625785-c0f3f76b7c8d?q=80&w=1200",
+    "description": "Relax your body and mind with local yoga groups—perfect for beginners or seasoned yogis."
+  },
+  {
+    "id": 10,
+    "name": "Cycling",
+    "image": "https://images.unsplash.com/photo-1534351590666-13e3e3d6e3f7?q=80&w=1200",
+    "description": "Join group rides, discover scenic routes, and boost your fitness with local cycling enthusiasts."
+  },
+  {
+    "id": 11,
+    "name": "Hiking",
+    "image": "https://images.unsplash.com/photo-1501706362039-c6e8091836ae?q=80&w=1200",
+    "description": "Explore trails, climb peaks, and discover hidden natural gems with experienced hikers near you."
+  },
+  {
+    "id": 12,
+    "name": "Gardening",
+    "image": "https://images.unsplash.com/photo-1599248351040-b6611e3c6922?q=80&w=1200",
+    "description": "Share planting tips, grow organic veggies, and beautify your surroundings with community garden events."
   }
 ]

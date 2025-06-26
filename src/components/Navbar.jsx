@@ -27,28 +27,31 @@ export default function Navbar() {
 
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/allGroups", label: "All Groups" },
-    { path: "/createGroup", label: "Create Group" },
-    { path: "/myGroups", label: "My Groups" },
+    { path: "/allGroups", label: "All Items" },
+    { path: "/about", label: "About Us" },
+    { path: "/contactPage", label: "Contact" },
+    { path: "/SupportPage ", label: "Support" },
   ];
 
   const navLinkClass = ({ isActive }) =>
     `relative px-3 py-2 font-semibold text-lg transition-all duration-300 ${
-      isActive ? "text-purple-700" : "text-indigo-700 hover:text-purple-600"
+      isActive ? "text-secondary" : "text-white hover:text-secondary"
     }`;
 
   return (
-    <nav className="bg-gradient-to-r from-indigo-100 via-white to-purple-100 backdrop-blur-xl shadow-md fixed top-0 left-0 w-full z-50 border-b border-purple-200">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <nav className="sticky top-0 z-50 shadow bg-primary bg-opacity-95">
+      <div className="max-w-7xl mx-auto px-4 md:px-10 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg">
-            H
-          </div>
-          <span className="text-3xl font-extrabold bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 bg-clip-text text-transparent tracking-widest">
-            HobbyHub
-          </span>
-        </div>
+<div className="flex items-center space-x-2">
+  <img
+    src="/earth-svgrepo-com.svg"
+    alt="HobbyHub Logo"
+    className="w-10 h-10"
+  />
+  <span className="text-3xl font-extrabold tracking-widest text-secondary">
+    HobbyHub
+  </span>
+</div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
@@ -58,7 +61,7 @@ export default function Navbar() {
                 <div className="relative group">
                   <span>{label}</span>
                   <span
-                    className={`absolute left-0 -bottom-1 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full ${
+                    className={`absolute left-0 -bottom-1 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full ${
                       isActive ? "w-full" : "w-0"
                     }`}
                   />
@@ -79,14 +82,14 @@ export default function Navbar() {
                   "https://i.pravatar.cc/40"
                 }
                 alt="User"
-                className="w-9 h-9 rounded-full border-2 border-purple-500 object-cover"
+                className="w-9 h-9 rounded-full border-2 border-secondary object-cover"
               />
-              <span className="text-indigo-900 font-medium max-w-[150px] truncate">
+              <span className="text-white font-medium max-w-[150px] truncate">
                 {mongoUser?.name || user.displayName || "User"}
               </span>
               <button
                 onClick={handleLogout}
-                className="px-5 py-2 rounded-md text-sm bg-purple-600 text-white hover:bg-purple-700 transition"
+                className="px-5 py-2 rounded-md text-sm font-semibold text-primary bg-accent hover:bg-secondary/80 transition"
               >
                 Logout
               </button>
@@ -94,7 +97,7 @@ export default function Navbar() {
           ) : (
             <NavLink
               to="/login"
-              className="px-5 py-2 rounded-md text-sm bg-purple-600 text-white hover:bg-purple-700 transition"
+              className="px-5 py-2 rounded-md text-sm font-semibold text-primary bg-accent hover:bg-secondary/80 transition"
             >
               Login
             </NavLink>
@@ -104,7 +107,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-purple-700 hover:text-purple-900"
+          className="md:hidden text-secondary hover:text-secondary/80"
         >
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -112,7 +115,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden px-6 pb-6 pt-2 space-y-4 bg-white/90 backdrop-blur-lg rounded-b-xl shadow-md animate-fadeInDown">
+        <div className="md:hidden px-6 pb-6 pt-2 space-y-4 rounded-b-xl shadow-md bg-primary bg-opacity-95">
           {navLinks.map(({ path, label }) => (
             <NavLink
               key={path}
@@ -121,8 +124,8 @@ export default function Navbar() {
               className={({ isActive }) =>
                 `block px-4 py-2 rounded-md font-semibold ${
                   isActive
-                    ? "bg-purple-100 text-purple-900"
-                    : "hover:bg-purple-50 text-indigo-700"
+                    ? "bg-secondary text-primary"
+                    : "text-white hover:bg-primary"
                 }`
               }
             >
@@ -130,7 +133,7 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          <div className="border-t pt-4 space-y-3">
+          <div className="border-t border-secondary pt-4 space-y-3">
             {user ? (
               <>
                 <div className="flex items-center space-x-3">
@@ -141,9 +144,9 @@ export default function Navbar() {
                       "https://i.pravatar.cc/40"
                     }
                     alt="User"
-                    className="w-10 h-10 rounded-full border-2 border-purple-500"
+                    className="w-10 h-10 rounded-full border-2 border-secondary"
                   />
-                  <span className="font-medium text-purple-800 truncate max-w-[160px]">
+                  <span className="font-medium truncate max-w-[160px] text-secondary">
                     {mongoUser?.name || user.displayName || "User"}
                   </span>
                 </div>
@@ -152,7 +155,7 @@ export default function Navbar() {
                     handleLogout();
                     toggleMenu();
                   }}
-                  className="w-full bg-red-500 text-white py-2 rounded-md font-semibold hover:bg-red-600 transition"
+                  className="w-full py-2 rounded-md font-semibold text-primary bg-secondary hover:bg-secondary/80 transition"
                 >
                   Logout
                 </button>
@@ -161,7 +164,7 @@ export default function Navbar() {
               <NavLink
                 to="/login"
                 onClick={toggleMenu}
-                className="block w-full text-center bg-purple-600 text-white py-2 rounded-md font-semibold hover:bg-purple-700 transition"
+                className="block w-full py-2 rounded-md font-semibold text-primary bg-secondary hover:bg-secondary/80 transition"
               >
                 Login
               </NavLink>

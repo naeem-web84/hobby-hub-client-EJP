@@ -15,6 +15,8 @@ import FishingDetails from "../components/blogs/FishingDetails";
 import PhotographyDetails from "../components/blogs/PhotographyDetails";
 import About from "../components/About";
 import ErrorPage from "../pages/ErrorPage";
+import ContactPage from "../pages/ContactPage";
+import SupportPage from "../pages/SupportPage";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +36,14 @@ export const router = createBrowserRouter([
       {
         path: "register",
         Component: Register,
+      },
+      {
+        path: "/SupportPage ",
+        Component: SupportPage,
+      },
+      {
+        path: '/contactPage',
+        Component: ContactPage
       },
       {
         path: "allGroups",

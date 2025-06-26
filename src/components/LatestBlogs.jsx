@@ -3,9 +3,9 @@ import { Link } from 'react-router';
 
 const LatestBlogs = () => {
   return (
-    <section className="bg-[#e0f4ff] py-12">
+    <section className="bg-primary py-12 border rounded-xl">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-gray-800 mb-10 text-center">Latest Blog Posts</h2>
+        <h2 className="text-3xl font-bold text-white mb-10 text-center">Latest Blog Posts</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {/* Blog Card 1 - Urban Sketching */}
           <div className="bg-white rounded-lg shadow hover:shadow-lg transition duration-300">
@@ -50,7 +50,7 @@ const LatestBlogs = () => {
           </div>
 
           {/* Blog Card 4 - Photography */}
-          <div className="bg-white rounded-lg shadow hover:shadow-lg transition duration-300">
+          <div className="bg-secondary rounded-lg shadow hover:shadow-lg transition duration-300">
             <img
               src="https://img.freepik.com/premium-vector/cute-sports-photographer-shooting-action-cartoon-vector_1022901-115568.jpg?ga=GA1.1.1437492054.1736073450&semt=ais_hybrid&w=740"
               alt="Photography Blog"

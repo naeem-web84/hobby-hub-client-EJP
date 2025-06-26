@@ -10,7 +10,7 @@ const MainLayout = () => {
     const navigation = useNavigation();
 
     return (
-        <div className="bg-gradient-to-br from-[#f1f6fc] via-[#e8f5fa] to-[#f0f4ff] text-gray-800 min-h-screen">
+        <div className="bg-white text-gray-800 min-h-screen">
             <ScrollToTop/>
             <TitleUpdater />
             <Navbar />

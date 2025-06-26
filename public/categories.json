@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Video Gaming", "icon": "FaGamepad" },
+  { "id": 2, "name": "Fishing", "icon": "GiFishingHook" },
+  { "id": 3, "name": "Running", "icon": "FaRunning" },
+  { "id": 4, "name": "Cooking", "icon": "GiCookingPot" },
+  { "id": 5, "name": "Reading", "icon": "FaBook" },
+  { "id": 6, "name": "Photography", "icon": "FaCamera" },
+  { "id": 7, "name": "Painting", "icon": "FaPaintBrush" },
+  { "id": 8, "name": "Yoga", "icon": "GiLotus" }
+]

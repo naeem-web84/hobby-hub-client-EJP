@@ -1,1 +1,32 @@
- 
+ @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+ @import "tailwindcss";
+ /* Add this to your global styles */
+ /* @import "leaflet/dist/leaflet.css"; */
+
+
+ @plugin "daisyui" {
+     themes: light --default, dark
+ }
+
+ @plugin "daisyui/theme" {
+     name: "light";
+     default: true;
+     --color-primary: #1C2B36;
+     --color-secondary: #F8FAFC;
+     --color-accent: #32CD72;
+ }
+
+ /* #1E293B #8B5CF6 */
+
+
+ .font-urbanist {
+     font-family: "Urbanist", sans-serif;
+     font-optical-sizing: auto;
+     font-weight: 400;
+     font-style: normal;
+ }
+
+
+ .blur-light {
+     filter: blur(1px);
+ }

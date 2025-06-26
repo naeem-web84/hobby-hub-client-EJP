@@ -1,22 +1,24 @@
 import React from "react";
 
 const HobbyCard = ({ hobby }) => {
-  const { name, image, description } = hobby;
-
   return (
     <div
-      data-tooltip-id="global-tooltip"
-      data-tooltip-content={`Join the ${name} group to connect with like-minded people!`}
-      className="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-lg transition duration-300"
+      className="bg-white rounded-lg shadow-md hover:shadow-lg transition p-4 flex"
+      style={{ height: "220px", maxHeight: "220px", minHeight: "220px" }}
     >
+      {/* Image: fixed square size */}
       <img
-        src={image}
-        alt={name}
-        className="w-full h-40 object-cover"
+        src={hobby.image}
+        alt={hobby.name}
+        className="w-24 h-24 object-cover rounded-md flex-shrink-0"
       />
-      <div className="p-4">
-        <h3 className="text-lg font-semibold mb-2">{name}</h3>
-        <p className="text-gray-600 text-sm">{description}</p>
+
+      {/* Content area */}
+      <div className="ml-4 flex flex-col justify-center flex-grow">
+        <h3 className="text-lg font-semibold text-primary mb-2 truncate">
+          {hobby.name}
+        </h3>
+        <p className="text-sm text-primary/80 line-clamp-4">{hobby.description}</p>
       </div>
     </div>
   );
