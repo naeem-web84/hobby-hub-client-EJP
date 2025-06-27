@@ -27,36 +27,35 @@ import Profile from "../pages/Dashboard/Profile";
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: MainLayout,
-    errorElement: <ErrorPage></ErrorPage>,
+    element: <MainLayout />, 
+    errorElement: <ErrorPage />, 
     children: [
       {
         index: true,
         loader: () => fetch("./feature.json"),
-        Component: Home,
+        element: <Home />, 
       },
       {
         path: "login",
-        Component: Login,
+        element: <Login />, 
       },
       {
         path: "register",
-        Component: Register,
+        element: <Register />, 
       },
       {
-        path: "/SupportPage ",
-        Component: SupportPage,
+        path: "supportPage",
+        element: <SupportPage />, 
       },
       {
-        path: '/contactPage',
-        Component: ContactPage
+        path: "contactPage",
+        element: <ContactPage />, 
       },
       {
         path: "allGroups",
         loader: () => fetch("https://hobby-hub-server-theta.vercel.app/hobby"),
-        Component: AllGroups,
+        element: <AllGroups />, 
       },
-
       {
         path: "createGroup",
         element: (
@@ -93,57 +92,56 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/urbanSketchingDetails",
-        Component: UrbanSketchingDetails
+        path: "urbanSketchingDetails",
+        element: <UrbanSketchingDetails />,
       },
       {
-        path: "/runningDetails",
-        Component: RunningDetails
+        path: "runningDetails",
+        element: <RunningDetails />,
       },
       {
-        path: "/fishingDetails",
-        Component: FishingDetails
+        path: "fishingDetails",
+        element: <FishingDetails />,
       },
       {
-        path: "/photographyDetails",
-        Component: PhotographyDetails
+        path: "photographyDetails",
+        element: <PhotographyDetails />,
       },
       {
-        path: "/about",
-        Component: About
-      }
+        path: "about",
+        element: <About />,
+      },
     ],
   },
   {
-  path: "/dashboard",
-  element: (
-    <PrivateRoute>
-      <DashboardLayout />
-    </PrivateRoute>
-  ),
-  children: [
-    {
-      index: true,
-      element: <DashboardOverview />,
-    },
-    {
-      path: "allItems",
-      loader: () => fetch("https://hobby-hub-server-theta.vercel.app/hobby"),
-      element:  <AllItems></AllItems>,
-    },
-    {
-      path: "myItems",
-      element: <MyItems></MyItems>,
-    },
-    {
-      path: "addItem",
-      element:  <AddItems></AddItems>
-    },
-    {
-      path: "profile",
-      element:   <Profile></Profile>
-    },
-  ],
-}
-
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: <DashboardOverview />,
+      },
+      {
+        path: "allItems",
+        loader: () => fetch("https://hobby-hub-server-theta.vercel.app/hobby"),
+        element: <AllItems />, 
+      },
+      {
+        path: "myItems",
+        element: <MyItems />, 
+      },
+      {
+        path: "addItem",
+        element: <AddItems />, 
+      },
+      {
+        path: "profile",
+        element: <Profile />, 
+      }, 
+    ],
+  },
 ]);
