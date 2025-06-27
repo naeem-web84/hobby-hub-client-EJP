@@ -2,7 +2,7 @@
 
 > A community platform where individuals can discover, create, and manage local hobby-based groups like book clubs, fitness crews, art circles, and more.
 
-🌐 [Live Website](https://hobby-hub-fortuner.surge.sh/)  
+🌐 [Live Website](https://hobby-hub-app-bb214.web.app/)  
 🗂️ [Client Repository](https://github.com/naeem-web84/hobby-hub-client-EJP)  
 🗂️ [Server Repository](https://github.com/naeem-web84/hobby-hub-server-EJP)
 
