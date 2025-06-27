@@ -16,7 +16,7 @@ const GroupCard = ({ singleGroup, index }) => {
 
   return (
     <div
-      className="bg-primary rounded-xl shadow-md p-4 flex gap-4 items-start h-full hover:shadow-xl transition duration-300"
+      className="bg-primary rounded-xl shadow-md p-4 flex gap-4 items-start hover:shadow-xl transition duration-300"
       data-aos="zoom-in"
       data-aos-delay={50 * (index % 4)}
     >
@@ -30,10 +30,12 @@ const GroupCard = ({ singleGroup, index }) => {
       </div>
 
       {/* Info */}
-      <div className="flex flex-col justify-between flex-grow">
-        <h3 className="text-lg font-bold text-accent mb-1">{groupName}</h3>
+      <div className="flex flex-col justify-between flex-grow gap-2">
+        {/* Title */}
+        <h3 className="text-lg font-bold text-accent leading-snug">{groupName}</h3>
 
-        <div className="text-sm text-secondary/80 space-y-1 leading-snug">
+        {/* Meta Info */}
+        <div className="text-sm text-secondary/80 space-y-1">
           <p className="flex items-center gap-1">
             <FaTags className="text-accent" /> {hobbyCategory}
           </p>
@@ -42,12 +44,14 @@ const GroupCard = ({ singleGroup, index }) => {
           </p>
         </div>
 
-        <div className="mt-3 flex justify-between items-center">
+        {/* Footer */}
+        <div className="mt-2 flex justify-between items-center flex-wrap gap-2">
           <p className="text-xs text-secondary/60 flex items-center gap-1">
             <FaUser className="text-accent" /> {userName}
           </p>
+
           <Link to={`/groupDetails/${_id}`}>
-            <button className="bg-accent text-primary text-xs px-4 py-1 rounded-md font-semibold hover:bg-primary hover:text-accent transition">
+            <button className="bg-accent text-primary text-sm px-4 py-2 rounded-lg font-semibold hover:bg-primary hover:text-accent transition duration-300">
               See More
             </button>
           </Link>

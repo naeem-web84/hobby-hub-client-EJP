@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useLoaderData } from "react-router";
-import GroupCard from "../components/GroupCard"; // or ItemCard if renamed
+import { useLoaderData } from "react-router"; 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import GroupCard from "../../components/GroupCard";
 
 const hobbyCategories = [
   "Drawing & Painting",
@@ -15,7 +15,7 @@ const hobbyCategories = [
   "Writing",
 ];
 
-const AllGroups = () => {
+const AllItems = () => {
   const allItems = useLoaderData(); // Comes from loader or fetch
   const [filteredItems, setFilteredItems] = useState(allItems || []);
   const [searchTerm, setSearchTerm] = useState("");
@@ -124,4 +124,4 @@ const AllGroups = () => {
   );
 };
 
-export default AllGroups;
+export default AllItems;

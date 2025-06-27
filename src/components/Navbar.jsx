@@ -42,12 +42,11 @@ export default function Navbar() {
   const loggedInNavLinks = [
     { path: "/createGroup", label: "Create Group" },
     { path: "/myGroups", label: "My Groups" },
-    { path: "/about", label: "About Us" },
+    { path: "/dashboard", label: "Dashboard" },  
   ];
 
   const navLinkClass = ({ isActive }) =>
-    `relative px-2 py-1 font-semibold text-base transition-colors duration-300 ${
-      isActive ? "text-secondary" : "text-white hover:text-secondary"
+    `relative px-2 py-1 font-semibold text-base transition-colors duration-300 ${isActive ? "text-secondary" : "text-white hover:text-secondary"
     }`;
 
   return (
@@ -74,9 +73,8 @@ export default function Navbar() {
                 <div className="relative group whitespace-nowrap">
                   <span>{label}</span>
                   <span
-                    className={`absolute left-0 -bottom-1 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full ${
-                      isActive ? "w-full" : "w-0"
-                    }`}
+                    className={`absolute left-0 -bottom-1 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full ${isActive ? "w-full" : "w-0"
+                      }`}
                   />
                 </div>
               )}
@@ -90,9 +88,8 @@ export default function Navbar() {
                 <div className="relative group whitespace-nowrap">
                   <span>{label}</span>
                   <span
-                    className={`absolute left-0 -bottom-1 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full ${
-                      isActive ? "w-full" : "w-0"
-                    }`}
+                    className={`absolute left-0 -bottom-1 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full ${isActive ? "w-full" : "w-0"
+                      }`}
                   />
                 </div>
               )}
@@ -152,10 +149,9 @@ export default function Navbar() {
               to={path}
               onClick={toggleMenu}
               className={({ isActive }) =>
-                `block px-3 py-2 rounded-md font-semibold text-base transition-colors duration-200 ${
-                  isActive
-                    ? "bg-secondary text-primary"
-                    : "text-white hover:bg-primary"
+                `block px-3 py-2 rounded-md font-semibold text-base transition-colors duration-200 ${isActive
+                  ? "bg-secondary text-primary"
+                  : "text-white hover:bg-primary"
                 }`
               }
             >
@@ -169,10 +165,9 @@ export default function Navbar() {
               to={path}
               onClick={toggleMenu}
               className={({ isActive }) =>
-                `block px-3 py-2 rounded-md font-semibold text-base transition-colors duration-200 ${
-                  isActive
-                    ? "bg-secondary text-primary"
-                    : "text-white hover:bg-primary"
+                `block px-3 py-2 rounded-md font-semibold text-base transition-colors duration-200 ${isActive
+                  ? "bg-secondary text-primary"
+                  : "text-white hover:bg-primary"
                 }`
               }
             >
