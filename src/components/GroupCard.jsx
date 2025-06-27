@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React from "react";
+import { Link } from "react-router"; 
+import { FaMapMarkerAlt, FaUser, FaTags } from "react-icons/fa";
 
 const GroupCard = ({ singleGroup, index }) => {
   const {
@@ -14,29 +15,45 @@ const GroupCard = ({ singleGroup, index }) => {
   } = singleGroup;
 
   return (
-    <tr className="hover:bg-blue-50 transition duration-300">
-      <td className="p-4 font-semibold text-blue-600 text-lg">{index + 1}</td>
-      <td className="p-4">
+    <div
+      className="bg-primary rounded-xl shadow-md p-4 flex gap-4 items-start h-full hover:shadow-xl transition duration-300"
+      data-aos="zoom-in"
+      data-aos-delay={50 * (index % 4)}
+    >
+      {/* Image */}
+      <div className="w-16 h-16 rounded-full ring ring-accent overflow-hidden flex-shrink-0">
         <img
           src={imageUrl}
           alt={groupName}
-          className="w-16 h-16 object-cover rounded-lg shadow-md mx-auto"
+          className="w-full h-full object-cover"
         />
-      </td>
-      <td className="p-4">{groupName}</td>
-      <td className="p-4">{hobbyCategory}</td>
-      <td className="p-4">{location}</td>
-      <td className="p-4">{maxMembers}</td>
-      <td className="p-4">{startDate}</td>
-      <td className="p-4">{userName}</td>
-      <td className="p-4">
-        <Link to={`/groupDetails/${_id}`}>
-          <button className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:scale-105 transition-all duration-300 shadow-md">
-            See More
-          </button>
-        </Link>
-      </td>
-    </tr>
+      </div>
+
+      {/* Info */}
+      <div className="flex flex-col justify-between flex-grow">
+        <h3 className="text-lg font-bold text-accent mb-1">{groupName}</h3>
+
+        <div className="text-sm text-secondary/80 space-y-1 leading-snug">
+          <p className="flex items-center gap-1">
+            <FaTags className="text-accent" /> {hobbyCategory}
+          </p>
+          <p className="flex items-center gap-1">
+            <FaMapMarkerAlt className="text-accent" /> {location}
+          </p>
+        </div>
+
+        <div className="mt-3 flex justify-between items-center">
+          <p className="text-xs text-secondary/60 flex items-center gap-1">
+            <FaUser className="text-accent" /> {userName}
+          </p>
+          <Link to={`/groupDetails/${_id}`}>
+            <button className="bg-accent text-primary text-xs px-4 py-1 rounded-md font-semibold hover:bg-primary hover:text-accent transition">
+              See More
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -31,30 +31,29 @@ const GroupDetails = () => {
     description,
   } = group;
 
-   const isExpired = new Date(startDate) < new Date();
+  const isExpired = new Date(startDate) < new Date();
 
-   const handleJoin = () => {
- 
+  const handleJoin = () => {
     Swal.fire({
       title: "Joined Successfully!",
       text: `You have joined "${groupName}"`,
       icon: "success",
-      confirmButtonColor: "#6366f1",
+      confirmButtonColor: "#2EA44F", // accent
       confirmButtonText: "Go to All Groups",
     }).then((result) => {
       if (result.isConfirmed) {
-        navigate("/allGroups"); 
+        navigate("/allGroups");
       }
     });
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6 mb-20">
+    <div className="max-w-3xl mx-auto p-6 mb-20" data-aos="zoom-in">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="bg-gradient-to-br from-white via-blue-50 to-purple-100 shadow-xl rounded-2xl p-8 border border-blue-200 hover:shadow-2xl transition duration-500"
+        className="bg-secondary border border-accent shadow-2xl rounded-2xl p-8"
       >
         {/* Group Image */}
         <motion.img
@@ -67,40 +66,40 @@ const GroupDetails = () => {
         />
 
         {/* Group Name */}
-        <h2 className="text-3xl font-extrabold text-purple-700 mb-2 text-center">
+        <h2 className="text-3xl font-extrabold text-accent mb-2 text-center">
           {groupName}
         </h2>
 
         {/* Description */}
-        <p className="text-md text-gray-700 italic text-center mb-6">
+        <p className="text-base text-black/80 italic text-center mb-6">
           {description}
         </p>
 
         {/* Info Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-800 mb-8">
-          <p className="flex items-center gap-2 text-indigo-600 font-semibold">
-            <FaTags /> Category:{" "}
-            <span className="text-gray-800 font-normal">{hobbyCategory}</span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-black mb-8">
+          <p className="flex items-center gap-2 font-semibold text-accent">
+            <FaTags /> Category:
+            <span className="text-black font-normal">{hobbyCategory}</span>
           </p>
-          <p className="flex items-center gap-2 text-pink-600 font-semibold">
-            <FaMapMarkerAlt /> Location:{" "}
-            <span className="text-gray-800 font-normal">{location}</span>
+          <p className="flex items-center gap-2 font-semibold text-accent">
+            <FaMapMarkerAlt /> Location:
+            <span className="text-black font-normal">{location}</span>
           </p>
-          <p className="flex items-center gap-2 text-green-600 font-semibold">
-            <FaUsers /> Max Members:{" "}
-            <span className="text-gray-800 font-normal">{maxMembers}</span>
+          <p className="flex items-center gap-2 font-semibold text-accent">
+            <FaUsers /> Max Members:
+            <span className="text-black font-normal">{maxMembers}</span>
           </p>
-          <p className="flex items-center gap-2 text-blue-600 font-semibold">
-            <FaCalendarAlt /> Start Date:{" "}
-            <span className="text-gray-800 font-normal">{startDate}</span>
+          <p className="flex items-center gap-2 font-semibold text-accent">
+            <FaCalendarAlt /> Start Date:
+            <span className="text-black font-normal">{startDate}</span>
           </p>
-          <p className="flex items-center gap-2 text-orange-600 font-semibold">
-            <FaUserCircle /> Created By:{" "}
-            <span className="text-gray-800 font-normal">{userName}</span>
+          <p className="flex items-center gap-2 font-semibold text-accent col-span-full sm:col-span-2">
+            <FaUserCircle /> Created By:
+            <span className="text-black font-normal">{userName}</span>
           </p>
         </div>
 
-        {/* Join Group or Expired Notice */}
+        {/* Join or Expired */}
         <div className="text-center mt-6">
           {isExpired ? (
             <p className="text-red-600 font-semibold text-lg">
@@ -111,7 +110,7 @@ const GroupDetails = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleJoin}
-              className="bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700 text-white font-bold px-8 py-3 rounded-full shadow-lg transition-all duration-300"
+              className="bg-accent text-primary font-bold px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:bg-accent/80"
             >
               🚀 Join Group
             </motion.button>

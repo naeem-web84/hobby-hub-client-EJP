@@ -22,7 +22,7 @@ const MyGroups = () => {
       text: "This action cannot be undone.",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#2563eb",
+      confirmButtonColor: "#2EA44F", // accent
       cancelButtonColor: "#ef4444",
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
@@ -42,17 +42,21 @@ const MyGroups = () => {
   };
 
   return (
-    <div className="px-4 py-12 min-h-screen">
-      <div className="max-w-6xl mx-auto bg-white/80 rounded-3xl shadow-2xl backdrop-blur-lg p-6 md:p-10">
-        <h2 className="text-4xl font-extrabold text-center bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-10">
+    <div className="px-4 py-12 min-h-screen bg-primary rounded-xl">
+      <div
+        className="max-w-6xl mx-auto bg-secondary text-black rounded-3xl shadow-2xl border border-accent p-6 md:p-10"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <h2 className="text-4xl font-extrabold text-accent text-center mb-10">
           My Hobby Groups
         </h2>
 
         {groups.length > 0 ? (
-          <div className="overflow-x-auto animate-fade-in-up">
-            <table className="min-w-full table-auto border-collapse md:border-separate md:border-spacing-0">
+          <div className="overflow-x-auto">
+            <table className="min-w-full table-auto">
               <thead className="hidden md:table-header-group">
-                <tr className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-sm uppercase tracking-wider">
+                <tr className="bg-accent text-primary text-sm uppercase tracking-wider">
                   <th className="px-6 py-4 text-left">No</th>
                   <th className="px-6 py-4 text-left">Group Name</th>
                   <th className="px-6 py-4 text-left">Category</th>
@@ -64,45 +68,30 @@ const MyGroups = () => {
                 {groups.map((group, index) => (
                   <tr
                     key={group._id}
-                    className="border-b border-indigo-200 hover:bg-indigo-50 transition-colors duration-300 md:table-row block md:table-row"
+                    className="border-b border-accent hover:bg-primary/10 transition-colors duration-300 md:table-row block md:table-row"
                   >
-                    <td
-                      className="px-6 py-4 text-gray-500 font-semibold md:table-cell block relative md:static"
-                      data-label="#"
-                    >
+                    <td className="px-6 py-4 font-semibold text-black md:table-cell block relative">
                       <span className="md:hidden font-bold">#:</span> {index + 1}
                     </td>
-                    <td
-                      className="px-6 py-4 text-indigo-700 font-medium md:table-cell block relative md:static"
-                      data-label="Group Name"
-                    >
+                    <td className="px-6 py-4 font-medium text-accent md:table-cell block relative">
                       <span className="md:hidden font-bold">Group Name:</span> {group.groupName}
                     </td>
-                    <td
-                      className="px-6 py-4 text-purple-600 md:table-cell block relative md:static"
-                      data-label="Category"
-                    >
+                    <td className="px-6 py-4 text-black md:table-cell block relative">
                       <span className="md:hidden font-bold">Category:</span> {group.hobbyCategory}
                     </td>
-                    <td
-                      className="px-6 py-4 text-pink-600 md:table-cell block relative md:static"
-                      data-label="Location"
-                    >
+                    <td className="px-6 py-4 text-black md:table-cell block relative">
                       <span className="md:hidden font-bold">Location:</span> {group.location}
                     </td>
-                    <td
-                      className="px-6 py-4 md:table-cell block relative md:static"
-                      data-label="Actions"
-                    >
+                    <td className="px-6 py-4 md:table-cell block relative">
                       <div className="flex flex-col sm:flex-row gap-2">
                         <button
-                          className="bg-blue-500 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow hover:bg-blue-600 transition cursor-pointer"
+                          className="bg-accent text-primary px-4 py-1.5 rounded-full text-sm font-medium hover:bg-accent/90 transition"
                           onClick={() => navigate(`/updateGroup/${group._id}`)}
                         >
                           Update
                         </button>
                         <button
-                          className="bg-red-500 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow hover:bg-red-600 transition cursor-pointer"
+                          className="bg-red-500 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-red-600 transition"
                           onClick={() => handleDelete(group._id)}
                         >
                           Delete
@@ -115,7 +104,7 @@ const MyGroups = () => {
             </table>
           </div>
         ) : (
-          <p className="text-center text-gray-600 text-lg mt-6">
+          <p className="text-center text-black text-lg mt-6">
             You haven’t created any groups yet.
           </p>
         )}

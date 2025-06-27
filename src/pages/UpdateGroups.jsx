@@ -72,7 +72,7 @@ const UpdateGroups = () => {
           title: 'Group Updated!',
           text: 'Your hobby group has been successfully updated.',
           icon: 'success',
-          confirmButtonColor: '#3085d6',
+          confirmButtonColor: '#2EA44F',
           confirmButtonText: 'Back to My Groups'
         }).then(result => {
           if (result.isConfirmed) {
@@ -87,20 +87,24 @@ const UpdateGroups = () => {
   };
 
   return (
-    <div className="bg-[#F0F8FF] min-h-screen py-10 px-4 md:px-8">
-      <div className="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-8 border border-blue-100">
-        <h2 className="text-3xl font-bold text-center text-[#3A5BA0] mb-8">
+    <div className="min-h-screen flex items-center justify-center px-4 pb-10">
+      <div
+        className="w-full max-w-4xl bg-secondary text-black border border-accent rounded-2xl shadow-2xl p-6 md:p-10"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <h2 className="text-3xl font-bold text-accent text-center mb-8">
           Update Hobby Group
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <input
             name="groupName"
-            placeholder="Group Name"
             value={groupData.groupName}
             onChange={handleChange}
+            placeholder="Group Name"
             required
-            className="input w-full"
+            className="input bg-secondary text-black border border-accent placeholder-accent w-full rounded-xl shadow-sm"
           />
 
           <select
@@ -108,7 +112,7 @@ const UpdateGroups = () => {
             value={groupData.hobbyCategory}
             onChange={handleChange}
             required
-            className="input w-full"
+            className="select bg-secondary text-black border border-accent w-full rounded-xl shadow-sm"
           >
             <option value="">Select Category</option>
             {hobbyCategories.map(cat => (
@@ -116,58 +120,61 @@ const UpdateGroups = () => {
             ))}
           </select>
 
-          <textarea
-            name="description"
-            placeholder="Description"
-            value={groupData.description}
+          <input
+            name="location"
+            value={groupData.location}
             onChange={handleChange}
+            placeholder="Meeting Location"
             required
-            className="textarea w-full"
+            className="input bg-secondary text-black border border-accent placeholder-accent w-full rounded-xl shadow-sm"
           />
 
           <input
-            name="location"
-            placeholder="Meeting Location"
-            value={groupData.location}
+            name="maxMembers"
+            type="number"
+            value={groupData.maxMembers}
             onChange={handleChange}
+            placeholder="Max Members"
+            min={1}
             required
-            className="input w-full"
+            className="input bg-secondary text-black border border-accent placeholder-accent w-full rounded-xl shadow-sm"
           />
 
-          <div className="grid grid-cols-2 gap-4">
-            <input
-              name="maxMembers"
-              type="number"
-              placeholder="Max Members"
-              value={groupData.maxMembers}
-              onChange={handleChange}
-              required
-              className="input w-full"
-              min={1}
-            />
-            <input
-              name="startDate"
-              type="date"
-              value={groupData.startDate}
-              onChange={handleChange}
-              required
-              className="input w-full"
-            />
-          </div>
+          <input
+            name="startDate"
+            type="date"
+            value={groupData.startDate}
+            onChange={handleChange}
+            required
+            className="input bg-secondary text-black border border-accent w-full rounded-xl shadow-sm"
+          />
 
           <input
             name="imageUrl"
-            placeholder="Image URL"
             value={groupData.imageUrl}
             onChange={handleChange}
+            placeholder="Image URL"
             required
-            className="input w-full"
+            className="input bg-secondary text-black border border-accent placeholder-accent w-full rounded-xl shadow-sm"
+          />
+
+          <textarea
+            name="description"
+            value={groupData.description}
+            onChange={handleChange}
+            placeholder="Description"
+            required
+            rows={4}
+            className="textarea bg-secondary text-black border border-accent placeholder-accent w-full md:col-span-2 resize-none rounded-xl shadow-sm"
           />
 
           <input name="userName" value={groupData.userName} readOnly hidden />
           <input name="userEmail" value={groupData.userEmail} readOnly hidden />
 
-          <button type="submit" className="btn btn-primary w-full">
+          <button
+            type="submit"
+            className="btn bg-accent text-primary font-semibold md:col-span-2 hover:bg-accent/80 transition rounded-xl"
+          >
             Update Group
           </button>
         </form>

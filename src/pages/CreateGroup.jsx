@@ -4,8 +4,8 @@ import { AuthContext } from "../contexts/AuthContext";
 import { useNavigate } from "react-router";
 
 const CreateGroup = () => {
-    const navigate = useNavigate();
-  const { user } = useContext(AuthContext);  
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
 
   const hobbyCategories = [
     "Drawing & Painting",
@@ -22,15 +22,13 @@ const CreateGroup = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const groupData = Object.fromEntries(formData.entries());
- 
+
     groupData.userEmail = user?.email;
     groupData.userName = user?.displayName || "Anonymous";
 
     fetch("https://hobby-hub-server-theta.vercel.app/hobby", {
       method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
+      headers: { "content-type": "application/json" },
       body: JSON.stringify(groupData),
     })
       .then((res) => res.json())
@@ -40,14 +38,12 @@ const CreateGroup = () => {
             icon: "success",
             title: "New Group Added",
             text: "Your hobby group has been successfully created!",
-            confirmButtonColor: "#3A5BA0",
+            confirmButtonColor: "#2EA44F",
           });
+          navigate("/myGroups");
         }
-
-        navigate("/myGroups");
       })
-      .catch((error) => {
-        console.error("Error adding group:", error);
+      .catch(() => {
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -57,18 +53,28 @@ const CreateGroup = () => {
   };
 
   return (
-    <div className="bg-[#F0F8FF] min-h-screen py-10 px-4 md:px-8">
-      <div className="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-8 border border-blue-100">
-        <h2 className="text-3xl font-bold text-center text-[#3A5BA0] mb-8">
+    <div className="min-h-screen flex items-center justify-center px-4 py-10 bg-base-100">
+      <div className="w-full max-w-4xl bg-primary border border-accent rounded-2xl shadow-2xl p-6 md:p-10">
+        <h2 className="text-3xl font-bold text-accent text-center mb-8">
           Create a New Hobby Group
         </h2>
 
-        <form onSubmit={handleCreateGroup} className="space-y-6">
-          {/* Group Name */}
-          <input name="groupName" placeholder="Group Name" required className="input w-full" />
+        <form
+          onSubmit={handleCreateGroup}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          <input
+            name="groupName"
+            placeholder="Group Name"
+            required
+            className="input bg-secondary text-black placeholder:text-black border border-accent w-full rounded-xl shadow-sm"
+          />
 
-          {/* Category */}
-          <select name="hobbyCategory" required className="input w-full">
+          <select
+            name="hobbyCategory"
+            required
+            className="select bg-secondary text-black placeholder:text-black border border-accent w-full rounded-xl shadow-sm"
+          >
             <option value="">Select Category</option>
             {hobbyCategories.map((cat) => (
               <option key={cat} value={cat}>
@@ -77,26 +83,54 @@ const CreateGroup = () => {
             ))}
           </select>
 
-          {/* Description */}
-          <textarea name="description" placeholder="Description" required className="textarea w-full" />
+          <input
+            name="location"
+            placeholder="Meeting Location"
+            required
+            className="input bg-secondary text-black placeholder:text-black border border-accent w-full rounded-xl shadow-sm"
+          />
 
-          {/* Location */}
-          <input name="location" placeholder="Meeting Location" required className="input w-full" />
+          <input
+            name="maxMembers"
+            type="number"
+            placeholder="Max Members"
+            min={1}
+            required
+            className="input bg-secondary text-black placeholder:text-black border border-accent w-full rounded-xl shadow-sm"
+          />
 
-          {/* Max Members & Start Date */}
-          <div className="grid grid-cols-2 gap-4">
-            <input name="maxMembers" type="number" placeholder="Max Members" required className="input w-full" />
-            <input name="startDate" type="date" required className="input w-full" />
-          </div>
+          <input
+            name="startDate"
+            type="date"
+            required
+            className="input bg-secondary text-black placeholder:text-black border border-accent w-full rounded-xl shadow-sm"
+          />
 
-          {/* Image */}
-          <input name="imageUrl" placeholder="Image URL" required className="input w-full" />
+          <input
+            name="imageUrl"
+            placeholder="Image URL"
+            required
+            className="input bg-secondary text-black placeholder:text-black border border-accent w-full rounded-xl shadow-sm"
+          />
 
-          {/* Hidden inputs (not editable) */}
+          <textarea
+            name="description"
+            placeholder="Description"
+            required
+            rows={4}
+            className="textarea bg-secondary text-black placeholder:text-black border border-accent w-full md:col-span-2 resize-none rounded-xl shadow-sm"
+          />
+
+          {/* Hidden Auth Fields */}
           <input name="userName" value={user?.displayName || ""} readOnly hidden />
           <input name="userEmail" value={user?.email || ""} readOnly hidden />
 
-          <button type="submit" className="btn btn-primary w-full">Create Group</button>
+          <button
+            type="submit"
+            className="btn bg-accent text-primary font-semibold md:col-span-2 hover:bg-accent/80 transition rounded-xl"
+          >
+            Create Group
+          </button>
         </form>
       </div>
     </div>
