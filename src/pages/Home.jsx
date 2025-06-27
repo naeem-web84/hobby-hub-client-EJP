@@ -87,9 +87,10 @@ const HomePage = () => {
       <Tooltip id="global-tooltip" />
 
       {/* offers promoo */}
-      <section>
-        <OffersPromoBanner></OffersPromoBanner>
+      <section className="max-w-7xl mx-auto my-12">
+        <OffersPromoBanner />
       </section>
+
 
       {/* news letter */}
       <section>

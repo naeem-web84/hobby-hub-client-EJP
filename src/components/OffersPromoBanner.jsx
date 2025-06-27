@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 
 const OffersPromoBanner = () => {
   return (
-    <motion.section
-      className="bg-primary rounded-xl py-10 px-6 md:px-12 my-12 max-w-6xl mx-auto w-full relative overflow-hidden shadow-lg"
+    <motion.div
+      className="bg-primary rounded-xl py-10  md:px-12 w-full relative overflow-hidden shadow-lg"
       initial={{ opacity: 0, y: 60 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      {/* Background Accent Glow Circle */}
+      {/* Background Glow Circle */}
       <div className="absolute -top-16 -right-16 w-72 h-72 bg-accent/20 rounded-full blur-3xl" />
 
       <div className="relative z-10 text-center max-w-3xl mx-auto">
@@ -24,7 +24,7 @@ const OffersPromoBanner = () => {
           এখনই জয়েন করুন
         </button>
       </div>
-    </motion.section>
+    </motion.div>
   );
 };
 

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Video Gaming",
-    "image": "https://images.unsplash.com/photo-1598550890784-cb4bfe75f7c9?q=80&w=1200",
+    "image": "https://plus.unsplash.com/premium_photo-1678112180095-aec6c305811f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8VmlkZW8lMjBHYW1pbmclMjBmcmllbmR8ZW58MHx8MHx8fDA%3D",
     "description": "Join fellow gamers for weekly online sessions, tournaments, and strategy sharing for your favorite video games."
   },
   {
@@ -14,7 +14,7 @@
   {
     "id": 3,
     "name": "Running",
-    "image": "https://images.unsplash.com/photo-1571019613577-2b3735f5f4f6?q=80&w=1200",
+    "image": "https://media.istockphoto.com/id/2087707686/photo/group-of-asian-woman-friends-playing-together-at-the-beach.webp?a=1&b=1&s=612x612&w=0&k=20&c=8xDOhPCFYVIhSapt87mDGee7jx7ShJylO8AFC-uKgoU=",
     "description": "Whether you're a beginner or marathon pro, meet up for runs, share progress, and stay motivated together."
   },
   {
@@ -32,13 +32,13 @@
   {
     "id": 6,
     "name": "Writing",
-    "image": "https://images.unsplash.com/photo-1502920917128-1aa500764ce7?q=80&w=1200",
+    "image": "https://images.unsplash.com/photo-1686624386665-4cd01b96d0f6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8V3JpdGluZyUyMGZyaWVuZHxlbnwwfHwwfHx8MA%3D%3D",
     "description": "From journaling to fiction writing, collaborate on stories, receive feedback, and build your writing craft."
   },
   {
     "id": 7,
     "name": "Photography",
-    "image": "https://images.unsplash.com/photo-1549921296-3cce903b5b5b?q=80&w=1200",
+    "image": "https://media.istockphoto.com/id/2152263876/photo/group-of-asian-young-travelers-trying-local-street-food-at-petaling-street-chinatown-street.webp?a=1&b=1&s=612x612&w=0&k=20&c=E2eUJR_N0MPQvn4A8MH0yHTYL6jIQr-nVmNZGPDqKN8=",
     "description": "Capture the world around you, share your shots, and join local photo walks and exhibitions."
   },
   {
@@ -50,25 +50,25 @@
   {
     "id": 9,
     "name": "Yoga",
-    "image": "https://images.unsplash.com/photo-1594737625785-c0f3f76b7c8d?q=80&w=1200",
+    "image": "https://media.istockphoto.com/id/2182804548/photo/meditation-exercises-in-yoga-studio.webp?a=1&b=1&s=612x612&w=0&k=20&c=oJV-2SF2s_p1nX8Bh1DdCmvBlqp_GYesxaMzXNt5VQU=",
     "description": "Relax your body and mind with local yoga groups—perfect for beginners or seasoned yogis."
   },
   {
     "id": 10,
     "name": "Cycling",
-    "image": "https://images.unsplash.com/photo-1534351590666-13e3e3d6e3f7?q=80&w=1200",
+    "image": "https://media.istockphoto.com/id/1740244348/photo/smiling-asian-woman-in-her-20s-wearing-casual-clothes-and-headphones-riding-a-bicycle-on-the.webp?a=1&b=1&s=612x612&w=0&k=20&c=Ga8ggvNjP3xclcnMzCsze_rrv98RWLOkK5IGcmN1Go8=",
     "description": "Join group rides, discover scenic routes, and boost your fitness with local cycling enthusiasts."
   },
   {
     "id": 11,
     "name": "Hiking",
-    "image": "https://images.unsplash.com/photo-1501706362039-c6e8091836ae?q=80&w=1200",
+    "image": "https://media.istockphoto.com/id/1153641233/photo/the-achieved-their-set-goal-of-reaching-the-peak.webp?a=1&b=1&s=612x612&w=0&k=20&c=gKEskXaHFga4drpoMfyDUvSFIiRiTEevLmFab5o-XAA=",
     "description": "Explore trails, climb peaks, and discover hidden natural gems with experienced hikers near you."
   },
   {
     "id": 12,
     "name": "Gardening",
-    "image": "https://images.unsplash.com/photo-1599248351040-b6611e3c6922?q=80&w=1200",
+    "image": "https://media.istockphoto.com/id/1371994684/photo/family-potting-flowers-in-the-garden.webp?a=1&b=1&s=612x612&w=0&k=20&c=qI-i4SKWJVYtxJ3hDiPaX154xU5yxlznha33tgQ4npY=",
     "description": "Share planting tips, grow organic veggies, and beautify your surroundings with community garden events."
   }
 ]
